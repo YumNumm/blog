@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const { fontFamily } = require('tailwindcss/defaultTheme');
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   darkMode: "class",
@@ -29,7 +29,7 @@ module.exports = {
             },
             "html:not(.dark) p, li": {
               code: {
-                backgroundColor: "#e4e4e7",
+                backgroundColor: "#C8C8D6",
                 padding: "0.250rem 0.4rem",
                 borderRadius: "0.250rem",
                 fontWeight: "300",
@@ -43,7 +43,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', ...fontFamily.sans]
+        sans: ["Inter", ...fontFamily.sans],
       },
     },
   },
