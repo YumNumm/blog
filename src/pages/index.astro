@@ -11,8 +11,8 @@ interface Frontmatter {
 }
 
 const metadata = {
-  title: "Astro Basic Blog Template",
-  description: "This is a blog template made with Astro and Tailwind. Made by Lance Ross",
+  title: "YumNumm Blog",
+  description: "Hi👋",
 };
 
 let blogs = await Astro.glob<Frontmatter>("./posts/*.mdx");
@@ -27,10 +27,10 @@ blogs = blogs.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Dat
     <header class="max-w-xl sm:order-first">
       <h1 class="text-2xl sm:text-3xl font-bold mb-7 md:mb-5 text-center sm:text-left">Welcome to YumNumm Blog</h1>
       <p class="text-black dark:text-zinc-300 mb-5">My name is Onoue Ryotaro.</p>
-      <p class="text-black dark:text-zinc-300">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, debitis minima! Illo esse quod enim id deleniti, veritatis magnam dolorum non accusantium quam et nemo dolorem
-        aspernatur eligendi quidem est.
-      </p>
+      <blockquote class="text-black dark:text-zinc-300">
+      
+        Sacrifice is a part of any journey. Taking on these great challenges against great odds… that’s what makes us human.
+      </blockquote>
     </header>
   </section>
   <section class="py-14">
