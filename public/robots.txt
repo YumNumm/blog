@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://basicblog.lanceross.xyz/sitemap-index.xml
