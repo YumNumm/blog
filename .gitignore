@@ -1,6 +1,7 @@
 # build output
 dist/
-.output/
+# generated types
+.astro/
 
 # dependencies
 node_modules/
@@ -11,17 +12,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+
 # environment variables
 .env
 .env.production
 
 # macOS-specific files
 .DS_Store
-
-# we use pnpm for package management
-package-lock.json
-yarn.lock
-
-# other folders
-.vercel
-.netlify
