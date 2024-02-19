@@ -12,9 +12,12 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, pubDate } = Astro.props;
-
 // Jul 01 2022
 const parsedPubDate = pubDate ? new Date(pubDate) : new Date();
+
+const ogUrl = encodeURI(
+  `https://blog-ogp-worker.yumnumm.workers.dev/?msg=${title}&createdAt=${parsedPubDate.toISOString()}`
+);
 ---
 
 <!-- Global Metadata -->
@@ -52,10 +55,7 @@ const parsedPubDate = pubDate ? new Date(pubDate) : new Date();
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta
-  property="og:image"
-  content=`https://blog-ogp-worker.yumnumm.workers.dev/?msg=${title}&createdAt=${parsedPubDate.toISOString()}`
-/>
+<meta property="og:image" content={ogUrl} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
