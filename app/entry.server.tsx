@@ -16,13 +16,12 @@ export default async function handleRequest(
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext,
-  // This is ignored so we can keep it in the template for visibility.  Feel
-  // free to delete this parameter in your app if you're not using it!
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   loadContext: AppLoadContext
 ) {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), ABORT_DELAY);
+
+  let newResponseStatusCode = responseStatusCode;
 
   const body = await renderToReadableStream(
     <RemixServer
@@ -36,7 +35,7 @@ export default async function handleRequest(
         if (!controller.signal.aborted) {
           // Log streaming rendering errors from inside the shell
           console.error(error);
-          responseStatusCode = 500;
+          newResponseStatusCode = 500;
         }
       },
     }
@@ -51,6 +50,6 @@ export default async function handleRequest(
   responseHeaders.set("Content-Type", "text/html");
   return new Response(body, {
     headers: responseHeaders,
-    status: responseStatusCode,
+    status: newResponseStatusCode,
   });
 }
