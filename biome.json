@@ -8,11 +8,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": [
-			"public",
-			"worker-configuration.d.ts",
-			"postcss.config.js"
-		]
+		"ignore": ["public", "worker-configuration.d.ts", "postcss.config.js"]
 	},
 	"formatter": {
 		"enabled": true,
