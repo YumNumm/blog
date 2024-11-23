@@ -8,7 +8,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["public", "worker-configuration.d.ts", "postcss.config.js"]
+		"ignore": ["public", "worker-configuration.d.ts"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -26,7 +26,27 @@
 	},
 	"javascript": {
 		"formatter": {
-			"quoteStyle": "single"
+			"quoteStyle": "single",
+			"semicolons": "always"
 		}
-	}
+	},
+	"overrides": [
+		{
+			"include": [
+				"next.config.js",
+				"layout.tsx",
+				"page.tsx",
+				"loading.tsx",
+				"error.tsx",
+				"not-found.tsx"
+			],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "off"
+					}
+				}
+			}
+		}
+	]
 }
