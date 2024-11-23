@@ -21,32 +21,12 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"all": true
+			"recommended": true
 		}
 	},
 	"javascript": {
 		"formatter": {
-			"quoteStyle": "single",
-			"semicolons": "always"
+			"quoteStyle": "single"
 		}
-	},
-	"overrides": [
-		{
-			"include": [
-				"next.config.js",
-				"layout.tsx",
-				"page.tsx",
-				"loading.tsx",
-				"error.tsx",
-				"not-found.tsx"
-			],
-			"linter": {
-				"rules": {
-					"style": {
-						"noDefaultExport": "off"
-					}
-				}
-			}
-		}
-	]
+	}
 }
